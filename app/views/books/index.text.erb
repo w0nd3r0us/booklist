@@ -1,10 +1,4 @@
+Books
 <% @books.each do |book| %>
-<%= book.title %>
-    <%= book.author %>
-  <% if book.already_read %>
-(You have read this one.)
-  <% else %>
-(havent read yet.)
-  <% end %>
-
-<% end %>
+<%=book.title %> by <%=book.author.upcase%>
+<%end%>

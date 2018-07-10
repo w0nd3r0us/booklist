@@ -4,9 +4,14 @@ class BooksController < ApplicationController
     @books = books.all
 
     respond_to do |format|
-      format.html
-      format.text
+      format.html do
+        render :index
+      end
 
+      format.text do
+        render :index
+      end
+      
       format.csv do
         render plain: Book.generate_csv(@books)
       end
